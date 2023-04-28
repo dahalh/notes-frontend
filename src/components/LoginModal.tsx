@@ -41,6 +41,7 @@ const LoginModal = ({ onDismiss, onLoginSuccessful }: LoginModalProps) => {
       <Modal.Header closeButton>
         <Modal.Title>Log In</Modal.Title>
       </Modal.Header>
+
       <Modal.Body>
         {errorText && <Alert variant="danger">{errorText}</Alert>}
         <Form onSubmit={handleSubmit(onSubmit)}>

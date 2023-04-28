@@ -80,9 +80,7 @@ export async function logout() {
 export async function fetchNotes(): Promise<Note[]> {
   const response = await fetchData(
     process.env.REACT_APP_SERVER_API + "/api/notes",
-    {
-      method: "GET",
-    }
+    { method: "GET" }
   );
   return response.json();
 }

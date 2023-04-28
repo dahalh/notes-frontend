@@ -1,6 +1,6 @@
-import { Modal, Form, Button } from "react-bootstrap";
-import { Note } from "../models/note";
+import { Button, Form, Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { Note } from "../models/note";
 import { NoteInput } from "../network/notes_api";
 import * as NotesApi from "../network/notes_api";
 import TextInputField from "./form/TextInputField";
@@ -35,10 +35,9 @@ const AddEditNoteDialog = ({
       } else {
         noteResponse = await NotesApi.createNote(input);
       }
-
       onNoteSaved(noteResponse);
     } catch (error) {
-      console.log(error);
+      console.error(error);
       alert(error);
     }
   }
@@ -46,7 +45,7 @@ const AddEditNoteDialog = ({
   return (
     <Modal show onHide={onDismiss}>
       <Modal.Header closeButton>
-        <Modal.Title>{noteToEdit ? "Edit Note" : "Add Note"}</Modal.Title>
+        <Modal.Title>{noteToEdit ? "Edit note" : "Add note"}</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>
@@ -71,6 +70,7 @@ const AddEditNoteDialog = ({
           />
         </Form>
       </Modal.Body>
+
       <Modal.Footer>
         <Button type="submit" form="addEditNoteForm" disabled={isSubmitting}>
           Save

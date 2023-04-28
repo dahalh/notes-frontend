@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { Container } from "react-bootstrap";
+import { Route, Routes } from "react-router";
+import { BrowserRouter } from "react-router-dom";
 import LoginModal from "./components/LoginModal";
 import NavBar from "./components/NavBar";
 import SignUpModal from "./components/SignUpModal";
 import { User } from "./models/user";
 import * as NotesApi from "./network/notes_api";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Container } from "react-bootstrap";
 import NotesPage from "./pages/NotesPage";
-import PrivacyPage from "./pages/PrivacyPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import PrivacyPage from "./pages/PrivacyPage";
 import styles from "./styles/App.module.css";
 
 function App() {
@@ -38,7 +39,6 @@ function App() {
           onSignUpClicked={() => setShowSignUpModal(true)}
           onLogoutSuccessful={() => setLoggedInUser(null)}
         />
-
         <Container className={styles.pageContainer}>
           <Routes>
             <Route

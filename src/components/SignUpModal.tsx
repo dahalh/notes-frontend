@@ -32,7 +32,7 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
       } else {
         alert(error);
       }
-      console.log(error);
+      console.error(error);
     }
   }
 
@@ -41,6 +41,7 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
       <Modal.Header closeButton>
         <Modal.Title>Sign Up</Modal.Title>
       </Modal.Header>
+
       <Modal.Body>
         {errorText && <Alert variant="danger">{errorText}</Alert>}
         <Form onSubmit={handleSubmit(onSubmit)}>
@@ -72,9 +73,9 @@ const SignUpModal = ({ onDismiss, onSignUpSuccessful }: SignUpModalProps) => {
             error={errors.password}
           />
           <Button
-            className={styleUtils.width100}
             type="submit"
             disabled={isSubmitting}
+            className={styleUtils.width100}
           >
             Sign Up
           </Button>

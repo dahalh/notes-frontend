@@ -20,13 +20,13 @@ const NavBar = ({
   return (
     <Navbar bg="primary" variant="dark" expand="sm" sticky="top">
       <Container>
-        <Navbar.Brand to="/" as={Link}>
-          Notes App
+        <Navbar.Brand as={Link} to="/">
+          Cool Notes App
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="main-navbar" />
         <Navbar.Collapse id="main-navbar">
           <Nav>
-            <Nav.Link to="/privacy" as={Link}>
+            <Nav.Link as={Link} to="/privacy">
               Privacy
             </Nav.Link>
           </Nav>
